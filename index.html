@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta Tags -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arcane/Binance Exchanger</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  
+  <!-- Scripts -->
+  <script src="scripts/entry.js" defer></script>
+  <script src="dist/bundle.js" defer></script>
+</head>
+<body>
+  <section>
+    <div id="entry">
+      <h3><u>Authorization</u></h3>
+      <p>To use this exchanger, you must make an account with binance (a free one is fine) and obtain a secret key and an API key.</p>
+      <form class="inputGroup">
+        <input type="text" id="sKey" placeholder="Enter your Secret Key">
+        <input type="text" id="aKey" placeholder="Enter your API Key">  
+        <div class="inpSubmit">
+          <input type="submit" value="Authorize">
+          <i class="fas fa-lock"></i><i class="fas fa-unlock"></i>
+        </div>
+      </form>
+      <p>*Just make an account with binance and follow <a href="https://faq.lukka.tech/en/articles/4785261-how-to-generate-api-keys-for-binance">these</a> instructions.</p>
+    </div>
+    <div id="panel" class="hidden">
+      <h1><u>Arcane Exchanger</u></h1>
+      <div class="info">
+        <input type="text" id="info-sKey" disabled value="">
+        <input type="text" id="info-aKey" disabled value="">
+      </div>
+      <div class="coins">
+        <select name="baseQty" id="bsQty">
+          <option value="" disabled hidden>Select Base</option>
+          <option value="BTC">Bitcoin (BTC)</option>
+          <option value="ETH">Ethereum (ETH)</option>
+          <option value="BCH">Bitcoin Cash (BCH)</option>
+          <option value="XMR">Monero (XMR)</option>
+        </select>
+        <select name="assetQty" id="qtQty">
+          <option value="" disabled hidden>Select Quote</option>
+          <option value="BTC">Bitcoin (BTC)</option>
+          <option value="ETH">Ethereum (ETH)</option>
+          <option value="BCH">Bitcoin Cash (BCH)</option>
+          <option value="XMR">Monero (XMR)</option>
+        </select>
+        <div class="exchange">
+          <input type="number" class="output" min="0">
+          <input type="number" class="input"  min="0">
+        </div>
+        <h1 id="display"></h1>
+      </div>
+      <div class="operations">
+        <button id="btnCnt">Check Connectivity</button>
+        <!-- <button id="btnAvl">Check Availability</button> -->
+        <button id="btnBuy">Buy Cryptocurrency</button>
+        <button id="btnSll">Sell Cryptocurrency</button>
+      </div>
+      <input type="submit" id="returnBtn" value="Return">
+    </div>
+  </section>
+</body>
+</html>
